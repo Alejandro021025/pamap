@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="CSS/style.css" />
+  <title>Login</title>
+  <script>
+    function validarFormulario() {
+      var usuario = document.getElementsByName("usuario")[0].value;
+      var contrasena = document.getElementsByName("contrasena")[0].value;
+
+      // Hacer una solicitud AJAX al servidor para validar los datos
+      var xhr = new XMLHttpRequest();
+      xhr.open("POST", "procesar_login.php", true);
+      xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+
+      // Manejar la respuesta de la solicitud AJAX
+      xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4) {
+          if (xhr.status == 200) {
+            var respuesta = JSON.parse(xhr.responseText);
+            if (respuesta.valido) {
+              alert("Inicio de sesión exitoso!");
+            } else {
+              alert("Usuario o contraseña incorrectos. Intenta de nuevo.");
+            }
+          } else {
+            console.error("Error en la solicitud AJAX");
+          }
+        }
+      };
+
+      // Enviar datos del formulario
+      xhr.send("usuario=" + encodeURIComponent(usuario) + "&contrasena=" + encodeURIComponent(contrasena));
+
+      // Evitar que el formulario se envíe directamente
+      return false;
+    }
+  </script>
+</head>
+<body>
+  <div class="container-principal">
+    <div class="formulario">
+      <div class="imagen1"></div>
+      <h1>Inicio de Sesión</h1>
+      <form onsubmit="return validarFormulario()" method="post" action="procesar_login.php">
+        <div class="username">
+          <input type="text" name="usuario" required />
+          <label>Ingresar Usuario</label>
+        </div>
+        <div class="username">
+          <input type="password" name="contrasena" required />
+          <label>Ingresar Contraseña</label>
+        </div>
+        <div class="recordar">¿Olvidó su Contraseña?</div>
+        <input type="submit" value="Iniciar" />
+      </form>
+    </div>
+  </div>
+</body>
+</html>

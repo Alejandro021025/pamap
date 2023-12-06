@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <!--Menu-->
+<div class="menu">
+    <ion-icon name="menu-outline"></ion-icon>
+    <ion-icon name="close-outline"></ion-icon>
+  </div>
+
+  <div class="barra-lateral">
+    <div>
+      <div class="nombre-pagina">
+
+        <span>PAMAP</span>
+      </div>
+      <button class="boton">
+        <ion-icon name="home-outline"></ion-icon>
+        <span>Inicio</span>
+      </button>
+    </div>
+
+    <nav class="navegacion">
+      <ul>
+        <li>
+          <a id="inbox" href="#">
+            <ion-icon name="people-outline"></ion-icon>
+            <span>Clientes</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="reader-outline"></ion-icon>
+            <span>Contratos</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="cash-outline"></ion-icon>
+            <span>Cobros</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="clipboard-outline"></ion-icon>
+            <span>Reporte de inst...</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="clipboard-outline"></ion-icon>
+            <span>Reporte de mant...</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="calendar-number-outline"></ion-icon>
+            <span>Reporte Mensual</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <ion-icon name="book-outline"></ion-icon>
+            <span>Catalagos</span>
+          </a>
+        </li>
+      </ul>
+    </nav>
+
+    <div>
+      <div class="linea"></div>
+
+      <div class="modo-oscuro">
+        <div class="info">
+          <ion-icon name="moon-outline"></ion-icon>
+          <span>Dark Mode</span>
+        </div>
+        <div class="switch">
+          <div class="base">
+            <div class="circulo">
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="usuario">
+        <img src="/Jhampier.jpg" alt="">
+        <div class="info-usuario">
+          <div class="nombre-email">
+            <span class="nombre">Jeser</span>
+            <span class="email">jeser@gmail.com</span>
+          </div>
+          <ion-icon name="ellipsis-vertical-outline"></ion-icon>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!--End Menu-->
+
+</div>
+<!--Clientes-->
+<div class="container-clientes">
+  <form class="pane1">
+    <section>
+      <h1>Datos personales</h1>
+      <div id="addClientsPanel" class="datospersonales">
+        <input type="text" class="input-field" nombre="" id="infoNombre" placeholder="Nombre" />
+        <input type="text" class="input-field" nombre="" id="infoApePat" placeholder="Apellido Paterno" />
+        <input type="text" class="input-field" nombre="" id="infoApeMat" placeholder="Apellido Materno" />
+        <input type="text" class="input-field" nombre="" id="correo" placeholder="Correo Electronico" />
+        <input type="text" class="input-field" nombre="" id="num" placeholder="Numero telefonico" />
+      </div>
+    </section>
+    <hr>
+    <section>
+      <h2>Datos De Dirección</h2>
+      <div class="datosdireccion">
+        <input type="text" class="input-field" nombre="" id="infoNombre" placeholder="Codigo postal" />
+
+        <p class="combo">Estado:</p>
+        <select id="estadoBoxA" name="stateBoxA" class="select-box" required>
+      
+        </select>
+        <p class="combo">Municipio:</p>
+        <select id="municipioBoxA" name="MunicipioBoxA" class="select-box" required>
+          
+        </select>
+        <p class="combo">Colonia:</p>
+        <select id="coloniaBoxA" name="ColoniaBoxA" class="select-box" required>
+  
+        </select>
+        <input type="text" class="input-field" nombre="" id="calle" placeholder="Calle" />
+        <input type="text" class="input-field" nombre="" id="dsHogar" placeholder="Descripcion del hogar" />
+        <input type="text" class="input-field" nombre="" id="numInt" placeholder="Numero interior" />
+        <input type="text" class="input-field" nombre="" id="numExt" placeholder="Numero exterior" />
+      </div>
+    </section>
+  </form>
+  <div class="botones">
+    <button type="submit" class="editar">Editar</button>
+    <button type="submit" class="agregar">Agregar</button>
+  </div>
+  <hr>
+  <p class="combo">Buscar por nombre:</p>
+  <select id="buscarCliente" name="ClienteBoxA" class="box" required>
+    <!-- Add options dynamically based on your data -->
+  </select>
+  <button type="submit" class="buscar">Buscar</button>
+  <table class="default">
+    <tr>
+      <th scope="row">ID</th>
+      <th>Nombre completo</th>
+      <th>Correo electronico</th>
+      <th>Numero telefonico</th>
+      <th>Codigo postal</th>
+      <th>Estado</th>
+      <th>Municipio</th>
+      <th>Colonia</th>
+      <th>Calle</th>
+      <th>Descripcion del hogar</th>
+      <th>Numero interior</th>
+      <th>Numero exterior</th>
+    </tr>
+  </table>
+</div>
+</div>
+<!--End Clientes-->
+
+<!--Contratos-->
+<div class="contratos">
+  <div id="addContratosPanel" class="panel">
+    <h1>Contratos</h1>
+    <p class="comboContrato">Nombre cliente:</p>
+    <select id="elegirCliente" name="Cliente" class="box" required>
+      <!-- Add options dynamically based on your data -->
+    </select>
+    <button type="submit" class="buscar">Elegir cliente</button>
+    <p class="combo">Plan:</p>
+    <select id="plan" name="PlanBoxA" class="select-plan" required>
+      <!-- Add options dynamically based on your data -->
+    </select>
+    <p class="fechaI">Fecha de instalacion:</p>
+    <input type="date" id="fecha" name="fecha" class="fecha">
+    <p class="combo">Contrato:</p>
+    <select id="contrato" name="contratoBoxA" class="select-plan" required>
+      <!-- Add options dynamically based on your data -->
+    </select>
+    <p class="combo">Monto a pagar:</p>
+    <input type="text" class="input-field" nombre="" id="montoPagar" placeholder="Monto a pagar" />
+    <p class="fechaI">Fecha de primer cobro:</p>
+    <input type="date" id="fecha" name="fecha" class="fecha">
+    <button type="submit" class="guardar">Guardar</button>
+    <hr>
+    <p class="combo">Buscar por nombre:</p>
+    <select id="buscarCliente" name="ClienteBoxA" class="box" required>
+      <!-- Add options dynamically based on your data -->
+    </select>
+    <button type="submit" class="buscar">Buscar</button>
+    <table class="default">
+      <tr>
+        <th scope="row">Nombre</th>
+        <th>Plan</th>
+        <th>Fecha de instalacion</th>
+        <th>Contrato</th>
+        <th>Monto a pagar</th>
+        <th>Fecha de primer cobro</th>
+      </tr>
+    </table>
+  </div>
+</div>
+<!--End Contratos-->
+
+<!--Cobros-->
+<div class="cobros">
+  <div id="addCobrosPanel" class="panel">
+    <div class="titulo-cobros">
+      <h1>Cobros</h1>
+    </div>
+    <p class="comboContrato">Buscar cliente:</p>
+    <input type="text" class="input-field" nombre="" id="montoPagar" placeholder="" />
+    <p class="combo">Mes:</p>
+    <select id="mes" name="MesBoxA" class="select-box" required>
+    </select>
+    <p class="combo">Año:</p>
+    <select id="mes" name="MesBoxA" class="select-box" required>
+    </select>
+    <table class="default">
+      <tr>
+        <th scope="row">ID</th>
+        <th>ID Cliente</th>
+        <th>Nombre</th>
+        <th>Estado</th>
+        <th>Fecha de pago</th>
+        <th></th>
+      </tr>
+    </table>
+  </div>
+  <!--End Cobros-->
+  <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
